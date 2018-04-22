@@ -1,3 +1,9 @@
+<html>
+<head>
+<script src="https://unpkg.com/uport-connect/dist/uport-connect.js"></script>
+</head>
+
+<body>
 <b>uPort</b>
 
 <% if (typeof failureCount !== 'undefined') { %>
@@ -17,3 +23,35 @@
 	<input type="submit" value="Submit"/>
 	</div>
 </form>
+
+<img src="<%= qrURL %>"></img>
+
+<script type="text/javascript">
+  console.log('uPort!');
+  
+  /*
+  var requestToken = '<%= requestToken %>'
+  
+  // https://github.com/uport-project/uport-js/issues/44
+  window.onload = function() {
+    var connect = new uportconnect.Connect('Hanson HQ');
+    //var uri = 'https://id.uport.me/me?requestToken=' + requestToken;
+    var topic = connect.topicFactory('access_token');
+    console.log(topic)
+    const uri = `https://id.uport.me/me?requestToken=${encodeURIComponent(requestToken)}&callback_url=${encodeURIComponent(topic.url)}`
+    console.log(uri);
+    
+    connect.request({uri, topic}).then(response => {
+      // send response back to server
+      console.log('GOT IT?');
+      
+    }).catch(error => {
+      console.log(error)
+    })
+  }
+  */
+  
+</script>
+
+</body>
+</html>

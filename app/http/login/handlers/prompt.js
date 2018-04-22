@@ -1,5 +1,5 @@
 exports = module.exports = function(csrfProtection, ceremony) {
-  
+    
   return ceremony('login/did/uport',
     csrfProtection()
   );
