@@ -1,0 +1,19 @@
+<b>uPort</b>
+
+<% if (typeof failureCount !== 'undefined') { %>
+  <b>Failed attempts: <%= failureCount %></b>
+<% } %>
+
+<form action="/login/did/" method="post">
+	<div>
+	<label>OTP:</label>
+	<input type="text" name="otp"/>
+	</div>
+	<div>
+  <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+  <% if (typeof state !== 'undefined') { %>
+    <input type="hidden" name="state" value="<%= state %>"/>
+  <% } %>
+	<input type="submit" value="Submit"/>
+	</div>
+</form>
